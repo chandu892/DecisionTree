@@ -17,7 +17,7 @@ st.title("🏠 California House Price Prediction using Decision Tree Regression"
 # ------------------- LOAD DATA -------------------
 @st.cache_data
 def load_data():
-    df = pd.read_csv(r"C:\Users\manda\Downloads\housing.csv")
+    df = pd.read_csv("housing.csv")
     return df
 
 
@@ -150,4 +150,5 @@ if submit:
     )
 
     prediction = best_model.predict(input_data)[0]
+
     st.success(f"🏡 Predicted Median House Value: **${prediction:,.2f}**")
